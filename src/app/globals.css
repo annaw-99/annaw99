@@ -28,8 +28,22 @@ body {
 .custom-shadow {
   box-shadow: 
     -5px -5px 10px rgba(255, 255, 255, 0.7),
-    5px  5px 10px rgba(174, 174, 192, 0.2);;
+    5px  5px 10px rgba(174, 174, 192, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.custom-button:hover {
+  box-shadow: 
+    inset -5px -5px 10px rgba(255, 255, 255, 0.7),
+    inset 5px  5px 10px rgba(174, 174, 192, 0.2);
+  cursor: pointer;
+}
+
+.pressed-shadow {
+  box-shadow: 
+    inset -5px -5px 10px rgba(255, 255, 255, 0.7),
+    inset 5px  5px 10px rgba(174, 174, 192, 0.2);
+  cursor: pointer;
 }

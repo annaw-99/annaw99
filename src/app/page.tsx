@@ -1,38 +1,73 @@
-import Image from "next/image";
+"use client"
+
+import Link from 'next/link';
+import { useState } from 'react';
 
 export default function Home() {
+  const [activeTheme, setActiveTheme] = useState('light');
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20"
+    <div className="flex flex-col items-center flex-1 justify-center min-h-screen pt-6 lg:px-20 lg:pt-12"
     style={{ fontFamily: 'var(--font-bebas-neue)' }}>
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <div className="flex grid-cols-12 gap-[24px]">
+      <main className="flex flex-col gap-[24px] row-start-2 items-center">
+        
+        {/* Header */}
+        <div className="flex flex-wrap justify-center gap-[24px]">
           <div className="custom-shadow w-[45px] h-[45px] bg-[#E8E8E8] rounded-[30px] text-[20px]">A</div>
-          <div className="custom-shadow w-[412px] h-[45px] bg-[#E8E8E8] rounded-[30px] text-[16px]">ANNA_WANG@PORTFOLIO</div>
-          <div className="custom-shadow w-[242px] h-[45px] bg-[#E8E8E8] rounded-[30px] text-[16px]">/SECLECTED-PROJECTS</div>
-          <div className="custom-shadow w-[106px] h-[45px] bg-[#E8E8E8] rounded-[30px] text-[14px]">LIGHT</div>
-          <div className="custom-shadow w-[106px] h-[45px] bg-[#E8E8E8] rounded-[30px] text-[14px]">DARK</div>
-        </div>
-        <div className="flex grid-cols-6 gap-[24px]">
-          <div className="flex flex-col gap-[24px]">
-            <div className="custom-shadow w-[485px] h-[479px] bg-[#E8E8E8] rounded-[30px] text-[20px]">Profile</div>
-            <div className="flex gap-[24px]">
-              <button className="custom-shadow w-[99px] h-[42px] bg-[#E8E8E8] rounded-[30px] text-[12px] text-[#616161]">Github</button>
-              <button className="custom-shadow w-[99px] h-[42px] bg-[#E8E8E8] rounded-[30px] text-[12px] text-[#616161]">LinkedIn</button>
-              <button className="custom-shadow w-[234px] h-[42px] bg-[#E8E8E8] rounded-[30px] text-[12px] text-[#616161]">annawang9909@gmail.com</button>
-            </div>
+          <div className="custom-shadow custom-button w-[251px] lg:w-[412px] h-[45px] bg-[#E8E8E8] rounded-[30px] text-[16px]">ANNA_WANG@PORTFOLIO</div>
+          <div className="custom-shadow custom-button w-[140px] lg:w-[245px] h-[45px] bg-[#E8E8E8] rounded-[30px] text-[16px]">/SELECTED-PROJECTS</div>
+
+          {/* Theme Colors */}
+          <div 
+            className={`custom-shadow custom-button w-[70px] lg:w-[92px] h-[45px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161] cursor-pointer ${
+              activeTheme === 'light' ? 'pressed-shadow' : ''
+            }`}
+            onClick={() => setActiveTheme('light')}>
+            LIGHT
           </div>
-          <div className="flex flex-col gap-[24px]">
-            <div className="custom-shadow w-[497px] h-[204px] bg-[#E8E8E8] rounded-[30px] text-[16px]">Skills</div>
-            <div className="flex gap-[24px]">
-              <div className="custom-shadow w-[241px] h-[312px] bg-[#E8E8E8] rounded-[30px] text-[16px]">Tictactoe</div>
-              <div className="custom-shadow w-[241px] h-[312px] bg-[#E8E8E8] rounded-[30px] text-[16px]">Weather</div>
-            </div>
+          <div 
+            className={`custom-shadow custom-button w-[70px] lg:w-[92px] h-[45px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161] cursor-pointer ${
+              activeTheme === 'dark' ? 'pressed-shadow' : ''
+            }`}
+            onClick={() => setActiveTheme('dark')}>
+            DARK
           </div>
         </div>
-       
+
+        {/* Main Content */}
+        <div className="flex flex-col lg:flex-row gap-[24px] w-full max-w-[1200px]">
+          
+          {/* Left Side - Profile + Links */}
+          <div className="flex flex-col gap-[24px] mx-auto lg:mx-0">
+            <div className="custom-shadow w-[321px] lg:w-[481px] h-[479px] bg-[#E8E8E8] rounded-[30px] text-[20px] mx-auto">Profile</div>
+            
+            {/* Links */}
+            <div className="flex gap-[24px]">
+              <Link href="https://github.com/annaw-99" target="_blank" >
+                <div className="custom-shadow custom-button w-[70px] lg:w-[99px] h-[42px] bg-[#E8E8E8] rounded-[30px] text-[12px] text-[#616161]">Github</div>
+              </Link>
+              <Link href="https://www.linkedin.com/in/tungyen-wang" target="_blank">
+                <div className="custom-shadow custom-button w-[70px] lg:w-[99px] h-[42px] bg-[#E8E8E8] rounded-[30px] text-[12px] text-[#616161]">LinkedIn</div>
+              </Link>
+              <Link href="mailto:annawang9909@gmail.com">
+                <div className="custom-shadow custom-button w-[140px] lg:w-[235px] h-[45px] bg-[#E8E8E8] rounded-[30px] text-[12px] text-[#616161]">annawang9909@gmail.com</div>
+              </Link>            
+            </div>
+          </div>
+
+          {/* Right Side - Skills + Widgets */}
+          <div className="flex flex-col gap-[24px] mx-auto lg:mx-0">
+            <div className="custom-shadow w-[321px] lg:w-[481px] h-[204px] bg-[#E8E8E8] rounded-[30px] text-[16px] mx-auto">Skills</div>
+            <div className="flex gap-[24px]">
+              <div className="custom-shadow w-[150px] lg:w-[228.5px] h-[312px] bg-[#E8E8E8] rounded-[30px] text-[16px]">Tictactoe</div>
+              <div className="custom-shadow w-[150px] lg:w-[228.5px] h-[312px] bg-[#E8E8E8] rounded-[30px] text-[16px]">Weather</div>
+            </div>
+          </div>
+        </div>
       </main>
-      <footer className="row-start-3 flex flex-wrap items-center justify-center text-[#A6A6A6] text-[12px]">
-      © 2025 All Rights Reserved.
+      
+      <footer className="flex flex-wrap mt-12 mb-4 items-center justify-center text-[#A6A6A6] text-[12px]">
+        © 2025 ALL RIGHTS RESERVED.
       </footer>
     </div>
   );
