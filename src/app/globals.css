@@ -58,6 +58,12 @@ body {
   cursor: pointer;
 }
 
+.line-shadow {
+  box-shadow: 
+    inset -2px -2px 4px rgba(255, 255, 255, 0.7),
+    inset 2px  2px 4px rgba(174, 174, 192, 0.2);
+}
+
 .heading-one {
   filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.3));
 }

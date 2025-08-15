@@ -2,10 +2,12 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import TicTacToe from './components/game';
 
 export default function Home() {
   const [activeTheme, setActiveTheme] = useState('light');
   const [showProjects, setShowProjects] = useState(false);
+  const [ticTacToeStarted, setTicTacToeStarted] = useState(false);
 
   return (
     <div className="flex flex-col items-center flex-1 justify-center min-h-screen pt-10 lg:px-20 lg:pt-12"
@@ -56,7 +58,7 @@ export default function Home() {
                 }}>
                 {/* Front - Profile */}
                 <div 
-                  className="absolute inset-0 custom-shadow-left bg-[#E8E8E8] rounded-[30px] text-[20px] flex flex-col"
+                  className="absolute inset-0 custom-shadow-left bg-[#E8E8E8] rounded-[30px] text-[20px] flex flex-col justify-center"
                   style={{ 
                     backfaceVisibility: 'hidden',
                     WebkitBackfaceVisibility: 'hidden'
@@ -163,13 +165,39 @@ export default function Home() {
                 </div>
                 {/* Back - Project Two */}
                 <div 
-                  className="absolute inset-0 custom-shadow-left bg-[#E8E8E8] rounded-[30px] text-[16px] flex items-center justify-center"
+                  className="absolute inset-0 custom-shadow-left bg-[#E8E8E8] rounded-[30px] text-[16px] flex flex-col"
                   style={{ 
                     backfaceVisibility: 'hidden',
                     WebkitBackfaceVisibility: 'hidden',
                     transform: 'rotateY(180deg)'
                   }}>
-                  Project Two
+                    <p className='text-[#616161] text-xs mb-6'>Full-Stack Retaurant Waitlist System</p>
+
+                    <div className='flex flex-row gap-[20px]'>
+                      <div>
+                        <p className='heading-one text-[65px] lg:text-[80px] leading-none mb-2'>HUEY</p>
+                      </div>
+
+                      <div>
+                      {/* <div className='flex flex-row mb-4 gap-[10px]'>
+                        <div className='custom-shadow-center rounded-[30px] w-[35px] h-[25px] text-[#616161] text-sm'>C#</div>
+                        <div className='custom-shadow-center rounded-[30px] w-[45px] text-[#616161] text-sm'>.NET</div>
+                        <div className='custom-shadow-center rounded-[30px] w-[60px] text-[#616161] text-sm'>Angular</div>
+                      </div> */}
+                        <p className='text-[#A6A6A6] text-xs mb-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <div className='flex flex-row gap-[10px]'>
+                          <Link href="https://nextjs-hack.vercel.app/" target="_blank" className='hidden lg:flex'>
+                          <div className="custom-shadow-center custom-button w-[75px] h-[30px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161]">View Site</div>
+                          </Link> 
+                          <Link href="https://github.com/annaw-99/nextjs-hackathon" target="_blank">
+                            <div className="custom-shadow-center custom-button w-[75px] h-[30px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161]">View Repo</div>
+                          </Link> 
+                        </div>
+                      </div>
+
+                    </div>
+
                 </div>
               </div>
             </div>
@@ -189,7 +217,21 @@ export default function Home() {
                       backfaceVisibility: 'hidden',
                       WebkitBackfaceVisibility: 'hidden'
                     }}>
-                    <p className='text-[#616161] text-xs mb-2'>Tictactoe</p>
+                    {!ticTacToeStarted ? (
+                      <div className='flex flex-col gap-[30px]'>
+                        <p className='text-[#616161] text-xs mb-2'>Tictactoe</p>
+
+                        <div className="flex flex-col items-center justify-center">
+                          <p className='text-xs text-[#616161] mb-4'>Click <span className='text-[24px] text-[#CA0000]'>PLAY</span> to start!</p>
+                          <button onClick={() => setTicTacToeStarted(true)}
+                            className='custom-shadow-center custom-button w-[80px] px-4 py-1.5 bg-[#E8E8E8] rounded-[30px] text-[12px] text-[#616161]'>
+                            PLAY
+                          </button>
+                        </div>
+                      </div>
+                    ) : (
+                      <TicTacToe />
+                    )}
                   </div>
                   {/* Back - Project Three */}
                   <div 
@@ -200,7 +242,7 @@ export default function Home() {
                       transform: 'rotateY(180deg)'
                     }}>
                     <p className='text-[#616161] text-xs mb-2'>AI RAG Chatbot</p>
-                    <p className='heading-one text-[80px] leading-none mb-2'><span className='text-[40px]'>RAG</span>BOT</p>
+                    <p className='heading-one text-[65px] lg:text-[80px] leading-none mb-2'><span className='text-[25px] lg:text-[40px]'>RAG</span>BOT</p>
 
                     {/* TODO: Include this part in description */}
                     {/* <div className='flex flex-row mb-4 gap-[10px]'>
@@ -240,7 +282,7 @@ export default function Home() {
                       <div className='flex flex-row items-center justify-center gap-[20px] mb-4'>
                         <div className='custom-shadow-center w-[30px] h-[30px] rounded-[30px]'></div>
                         <div className='relative'>
-                          <p className='text-[#616161] text-[80px] leading-none'>23</p>
+                          <p className='heading-one text-[80px] leading-none'>23</p>
                           <span className='absolute top-0 right-0 text-[#616161] text-xs'>°C</span>
                         </div>                        
                         <div className='custom-shadow-center w-[30px] h-[30px] rounded-[30px]'></div>
@@ -259,7 +301,7 @@ export default function Home() {
                       transform: 'rotateY(180deg)'
                     }}>
                     <p className='text-[#616161] text-xs mb-2'>QR code generator</p>
-                    <p className='heading-one text-[80px] leading-none mb-2'><span className='text-[40px]'>Insta</span>QR</p>
+                    <p className='heading-one text-[65px] lg:text-[80px] leading-none mb-2'><span className='text-[25px] lg:text-[40px]'>Insta</span>QR</p>
 
                     {/* TODO: Include this part in description */}
                     {/* <div className='flex flex-row mb-4 gap-[10px]'>
@@ -270,8 +312,8 @@ export default function Home() {
                     <p className='text-[#A6A6A6] text-xs mb-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
                     <div className='flex flex-row gap-[10px]'>
-                      <Link href="https://insta-qr-ten.vercel.app/" target="_blank">
-                        <div className="custom-shadow-center custom-button w-[75px] h-[30px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161]">View Site</div>
+                      <Link href="https://insta-qr-ten.vercel.app/" target="_blank" className='hidden lg:flex'>
+                      <div className="custom-shadow-center custom-button w-[75px] h-[30px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161]">View Site</div>
                       </Link> 
                       <Link href="https://github.com/annaw-99/qr-code" target="_blank">
                         <div className="custom-shadow-center custom-button w-[75px] h-[30px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161]">View Repo</div>
