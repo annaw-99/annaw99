@@ -78,13 +78,35 @@ export default function Home() {
                 </div>
                 {/* Back - Project One */}
                 <div 
-                  className="absolute inset-0 custom-shadow-left bg-[#E8E8E8] rounded-[30px] text-[20px] flex items-center justify-center"
+                  className="absolute inset-0 custom-shadow-left bg-[#E8E8E8] rounded-[30px] text-[20px] flex flex-col justify-center"
                   style={{ 
                     backfaceVisibility: 'hidden',
                     WebkitBackfaceVisibility: 'hidden',
                     transform: 'rotateY(180deg)'
                   }}>
-                  Project One
+                  <p className='text-[#616161] text-xs mb-2'>Full-Stack E-Commerce Site</p>
+                  <p className='heading-one text-[80px] leading-none mb-2'>The Skin Store</p>
+
+                  <div className='flex flex-row mb-4 gap-[10px]'>
+                    <div className='custom-shadow-center rounded-[30px] w-[35px] h-[25px] text-[#616161] text-sm'>C#</div>
+                    <div className='custom-shadow-center rounded-[30px] w-[45px] text-[#616161] text-sm'>.NET</div>
+                    <div className='custom-shadow-center rounded-[30px] w-[60px] text-[#616161] text-sm'>Angular</div>
+                    <div className='custom-shadow-center rounded-[30px] w-[50px] text-[#616161] text-sm'>Azure</div>
+                    <div className='custom-shadow-center rounded-[30px] w-[50px] text-[#616161] text-sm'>Stripe</div>
+                  </div>
+
+                  <p className='text-[#A6A6A6] text-xs mb-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                  incididunt ut labore et dolore magna aliqua.</p>
+
+                  <div className='flex flex-row gap-[10px]'>
+                    <Link href="https://the-market-place.azurewebsites.net/shop" target="_blank">
+                      <div className="custom-shadow-center custom-button w-[75px] h-[30px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161]">View Site</div>
+                    </Link> 
+                    <Link href="https://github.com/annaw-99/e-commerce" target="_blank">
+                      <div className="custom-shadow-center custom-button w-[75px] h-[30px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161]">View Repo</div>
+                    </Link> 
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -171,13 +193,27 @@ export default function Home() {
                   </div>
                   {/* Back - Project Three */}
                   <div 
-                    className="absolute inset-0 custom-shadow-left bg-[#E8E8E8] rounded-[30px] text-[16px] flex items-center justify-center"
+                    className="absolute inset-0 custom-shadow-left bg-[#E8E8E8] rounded-[30px] text-[16px] flex flex-col"
                     style={{ 
                       backfaceVisibility: 'hidden',
                       WebkitBackfaceVisibility: 'hidden',
                       transform: 'rotateY(180deg)'
                     }}>
-                    Project Three
+                    <p className='text-[#616161] text-xs mb-2'>AI RAG Chatbot</p>
+                    <p className='heading-one text-[80px] leading-none mb-2'><span className='text-[40px]'>RAG</span>BOT</p>
+
+                    {/* TODO: Include this part in description */}
+                    {/* <div className='flex flex-row mb-4 gap-[10px]'>
+                      <div className='custom-shadow-center rounded-[30px] w-[60px] h-[25px] text-[#616161] text-sm'>Python</div>
+                      <div className='custom-shadow-center rounded-[30px] w-[60px] text-[#616161] text-sm'>OpenAI</div>
+                    </div> */}
+
+                    <p className='text-[#A6A6A6] text-xs mb-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                    <Link href="https://github.com/annaw-99/RAG-chatbot" target="_blank">
+                      <div className="custom-shadow-center custom-button w-[75px] h-[30px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161]">View Repo</div>
+                    </Link> 
+
                   </div>
                 </div>
               </div>
@@ -216,13 +252,32 @@ export default function Home() {
                   </div>
                   {/* Back - Project Four */}
                   <div 
-                    className="absolute inset-0 custom-shadow-left bg-[#E8E8E8] rounded-[30px] text-[16px] flex items-center justify-center"
+                    className="absolute inset-0 custom-shadow-left bg-[#E8E8E8] rounded-[30px] text-[16px] flex flex-col"
                     style={{ 
                       backfaceVisibility: 'hidden',
                       WebkitBackfaceVisibility: 'hidden',
                       transform: 'rotateY(180deg)'
                     }}>
-                    Project Four
+                    <p className='text-[#616161] text-xs mb-2'>QR code generator</p>
+                    <p className='heading-one text-[80px] leading-none mb-2'><span className='text-[40px]'>Insta</span>QR</p>
+
+                    {/* TODO: Include this part in description */}
+                    {/* <div className='flex flex-row mb-4 gap-[10px]'>
+                      <div className='custom-shadow-center rounded-[30px] w-[60px] h-[25px] text-[#616161] text-sm'>NextJs</div>
+                      <div className='custom-shadow-center rounded-[30px] w-[60px] text-[#616161] text-sm'>ShadcnUI</div>
+                    </div> */}
+
+                    <p className='text-[#A6A6A6] text-xs mb-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                    <div className='flex flex-row gap-[10px]'>
+                      <Link href="https://insta-qr-ten.vercel.app/" target="_blank">
+                        <div className="custom-shadow-center custom-button w-[75px] h-[30px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161]">View Site</div>
+                      </Link> 
+                      <Link href="https://github.com/annaw-99/qr-code" target="_blank">
+                        <div className="custom-shadow-center custom-button w-[75px] h-[30px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161]">View Repo</div>
+                      </Link> 
+                    </div>
+                  
                   </div>
                 </div>
               </div>
