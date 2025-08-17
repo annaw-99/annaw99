@@ -156,19 +156,105 @@ export default function Home() {
                   }}>
                   <p className='text-[#616161] text-xs mb-2'>Tools I'm most familiar with</p>
                   {/* Icons */}
-                  <div className='flex flex-row mb-2 gap-[10px]'>
-                    <div className='custom-shadow-center w-[45px] h-[45px] rounded-[30px]'>Java</div>
-                    <div className='custom-shadow-center w-[45px] h-[45px] rounded-[30px]'>Java</div>
-                    <div className='custom-shadow-center w-[45px] h-[45px] rounded-[30px]'>Java</div>
-                    <div className='custom-shadow-center w-[45px] h-[45px] rounded-[30px]'>Java</div>
-                    <div className='custom-shadow-center w-[45px] h-[45px] rounded-[30px]'>Java</div>
-                  </div>
-                  <div className='flex flex-row gap-[10px]'>
-                    <div className='custom-shadow-center w-[45px] h-[45px] rounded-[30px]'>Java</div>
-                    <div className='custom-shadow-center w-[45px] h-[45px] rounded-[30px]'>Java</div>
-                    <div className='custom-shadow-center w-[45px] h-[45px] rounded-[30px]'>Java</div>
-                    <div className='custom-shadow-center w-[45px] h-[45px] rounded-[30px]'>Java</div>
-                    <div className='custom-shadow-center w-[45px] h-[45px] rounded-[30px]'>Java</div>
+                  <div className="flex flex-col mb-2 gap-[10px]">
+                    <div className='flex flex-row mb-2 gap-[10px]'>
+                      {/* Java */}
+                      <div className="group flex flex-col justify-center items-center gap-0.5">
+                        <div className="custom-shadow-center custom-button w-[45px] h-[45px] rounded-[30px] flex items-center justify-center relative">
+                          <img src="/icons/java.svg" alt="Java" 
+                            className="w-6 h-6 opacity-100 group-hover:opacity-0 transition-opacity absolute" />
+                          <p className="text-[#616161] text-[10px] opacity-0 group-hover:opacity-100 transition-opacity absolute">
+                            Java
+                          </p>
+                        </div>
+                      </div>
+                      {/* Python */}
+                      <div className="group flex flex-col justify-center items-center gap-0.5">
+                        <div className="custom-shadow-center custom-button w-[45px] h-[45px] rounded-[30px] flex items-center justify-center relative">
+                          <img src="/icons/python.svg" alt="Python" 
+                            className="w-6 h-6 opacity-100 group-hover:opacity-0 transition-opacity absolute" />
+                          <p className="text-[#616161] text-[10px] opacity-0 group-hover:opacity-100 transition-opacity absolute">
+                            Python
+                          </p>
+                        </div>
+                      </div>
+                      {/* SQL */}
+                      <div className='custom-shadow-center w-[45px] h-[45px] rounded-[30px] flex items-center justify-center'>
+                        SQL
+                      </div>
+                      {/* JavaScript */}
+                      <div className="group flex flex-col justify-center items-center gap-0.5"> 
+                        <div className="custom-shadow-center custom-button w-[45px] h-[45px] rounded-[30px] flex items-center justify-center relative">
+                          <img src="/icons/javascript.svg" alt="JavaScript" 
+                            className="w-6 h-6 opacity-100 group-hover:opacity-0 transition-opacity absolute" />
+                          <p className="text-[#616161] text-[10px] opacity-0 group-hover:opacity-100 transition-opacity absolute">
+                            JavaScript
+                          </p>
+                        </div>
+                      </div>
+                      {/* TypeScript */}
+                      <div className="group flex flex-col justify-center items-center gap-0.5">
+                        <div className="custom-shadow-center custom-button w-[45px] h-[45px] rounded-[30px] flex items-center justify-center relative">
+                          <img src="/icons/typescript.svg" alt="TypeScript" 
+                            className="w-6 h-6 opacity-100 group-hover:opacity-0 transition-opacity absolute" />
+                          <p className="text-[#616161] text-[10px] opacity-0 group-hover:opacity-100 transition-opacity absolute">
+                            TypeScript
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex flex-row gap-[10px]">
+                      {/* React */}
+                      <div className="group flex flex-col justify-center items-center gap-0.5">
+                        <div className="custom-shadow-center custom-button w-[45px] h-[45px] rounded-[30px] flex items-center justify-center relative">
+                          <img src="/icons/react.svg" alt="React" 
+                            className="w-6 h-6 opacity-100 group-hover:opacity-0 transition-opacity absolute" />
+                          <p className="text-[#616161] text-[10px] opacity-0 group-hover:opacity-100 transition-opacity absolute">
+                            React
+                          </p>
+                        </div>
+                      </div>
+                      {/* Next.js */}
+                      <div className="group flex flex-col justify-center items-center gap-0.5">
+                        <div className="custom-shadow-center custom-button w-[45px] h-[45px] rounded-[30px] flex items-center justify-center relative">
+                          <img src="/icons/next.svg" alt="Next.js" 
+                            className="w-6 h-6 opacity-100 group-hover:opacity-0 transition-opacity absolute" />
+                          <p className="text-[#616161] text-[10px] opacity-0 group-hover:opacity-100 transition-opacity absolute">
+                            Next.js
+                          </p>
+                        </div>
+                      </div>
+                      {/* AWS */}
+                      <div className="group flex flex-col justify-center items-center gap-0.5">
+                        <div className="custom-shadow-center custom-button w-[45px] h-[45px] rounded-[30px] flex items-center justify-center relative">
+                          <img src="/icons/aws.svg" alt="AWS" 
+                            className="w-6 h-6 opacity-100 group-hover:opacity-0 transition-opacity absolute" />
+                          <p className="text-[#616161] text-[10px] opacity-0 group-hover:opacity-100 transition-opacity absolute">
+                            AWS
+                          </p>
+                        </div>
+                      </div>
+                      {/* PostgreSQL */}
+                      <div className="group flex flex-col justify-center items-center gap-0.5">
+                        <div className="custom-shadow-center custom-button w-[45px] h-[45px] rounded-[30px] flex items-center justify-center relative">
+                          <img src="/icons/postgresql.svg" alt="PostgreSQL" 
+                            className="w-6 h-6 opacity-100 group-hover:opacity-0 transition-opacity absolute" />
+                          <p className="text-[#616161] text-[10px] opacity-0 group-hover:opacity-100 transition-opacity absolute">
+                            PostgreSQL
+                          </p>
+                        </div>
+                      </div>
+                      {/* Docker */}
+                      <div className="group flex flex-col justify-center items-center gap-0.5">
+                        <div className="custom-shadow-center custom-button w-[45px] h-[45px] rounded-[30px] flex items-center justify-center relative">
+                          <img src="/icons/docker.svg" alt="Docker" 
+                            className="w-6 h-6 opacity-100 group-hover:opacity-0 transition-opacity absolute" />
+                          <p className="text-[#616161] text-[10px] opacity-0 group-hover:opacity-100 transition-opacity absolute">
+                            Docker
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
                 </div>
