@@ -3,11 +3,21 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import TicTacToe from './components/game';
+import { useWeather } from './hooks/weather';
+
+const cities: string[] = ['Taipei', 'Seattle', 'New York', 'Ithaca', 'San Francisco', 'Tokyo'];
 
 export default function Home() {
   const [activeTheme, setActiveTheme] = useState('light');
   const [showProjects, setShowProjects] = useState(false);
   const [ticTacToeStarted, setTicTacToeStarted] = useState(false);
+
+  const { 
+    weatherData, 
+    weatherLoading, 
+    nextCity,
+    previousCity 
+  } = useWeather(cities);
 
   return (
     <div className="flex flex-col items-center flex-1 justify-center min-h-screen pt-10 lg:px-20 lg:pt-12"
@@ -161,7 +171,6 @@ export default function Home() {
                     <div className='custom-shadow-center w-[45px] h-[45px] rounded-[30px]'>Java</div>
                   </div>
 
-
                 </div>
                 {/* Back - Project Two */}
                 <div 
@@ -179,11 +188,6 @@ export default function Home() {
                       </div>
 
                       <div>
-                      {/* <div className='flex flex-row mb-4 gap-[10px]'>
-                        <div className='custom-shadow-center rounded-[30px] w-[35px] h-[25px] text-[#616161] text-sm'>C#</div>
-                        <div className='custom-shadow-center rounded-[30px] w-[45px] text-[#616161] text-sm'>.NET</div>
-                        <div className='custom-shadow-center rounded-[30px] w-[60px] text-[#616161] text-sm'>Angular</div>
-                      </div> */}
                         <p className='text-[#A6A6A6] text-xs mb-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         <div className='flex flex-row gap-[10px]'>
@@ -244,12 +248,6 @@ export default function Home() {
                     <p className='text-[#616161] text-xs mb-2'>AI RAG Chatbot</p>
                     <p className='heading-one text-[65px] lg:text-[80px] leading-none mb-2'><span className='text-[25px] lg:text-[40px]'>RAG</span>BOT</p>
 
-                    {/* TODO: Include this part in description */}
-                    {/* <div className='flex flex-row mb-4 gap-[10px]'>
-                      <div className='custom-shadow-center rounded-[30px] w-[60px] h-[25px] text-[#616161] text-sm'>Python</div>
-                      <div className='custom-shadow-center rounded-[30px] w-[60px] text-[#616161] text-sm'>OpenAI</div>
-                    </div> */}
-
                     <p className='text-[#A6A6A6] text-xs mb-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
                     <Link href="https://github.com/annaw-99/RAG-chatbot" target="_blank">
@@ -277,18 +275,34 @@ export default function Home() {
                     <p className='text-[#616161] text-xs mb-4'>Weather <span className='text-[#A6A6A6]'>in places I've been to</span></p>
                     
                     <div className='flex flex-col items-center justify-center'>
-                      {/* TODO: Integrate API */}
-                      <p className='text-[#616161] text-md mb-2'>Seattle</p>
-                      <div className='flex flex-row items-center justify-center gap-[20px] mb-4'>
-                        <div className='custom-shadow-center w-[30px] h-[30px] rounded-[30px]'></div>
-                        <div className='relative'>
-                          <p className='heading-one text-[80px] leading-none'>23</p>
-                          <span className='absolute top-0 right-0 text-[#616161] text-xs'>°C</span>
-                        </div>                        
-                        <div className='custom-shadow-center w-[30px] h-[30px] rounded-[30px]'></div>
-                      </div>
-                      <div className='custom-shadow-center w-[150px] text-[#616161] px-4 py-2 rounded-[30px] text-xs'>Write something here.</div>
-
+                      {weatherLoading ? (
+                        <div className='text-[#A6A6A6] text-xs'>Loading...</div>
+                      ) : weatherData ? (
+                        <>
+                          <p className='text-[#616161] text-md mb-2'>{weatherData.location.name}</p>
+                          <div className='flex flex-row items-center justify-center gap-[15px] mb-4'>
+                            <button 
+                              onClick={previousCity}
+                              className='custom-shadow-center custom-button  w-[25px] h-[25px] rounded-[30px] flex items-center justify-center text-sm cursor-pointer'
+                            >
+                            </button>
+                            <div className='relative'>
+                              <p className='heading-one text-[80px] leading-none'>{Math.round(weatherData.current.temp_c)}</p>
+                              <span className='absolute top-0 text-[#616161] text-xs' style={{ right: '-10px' }}>°C</span>
+                              </div>                        
+                            <button 
+                              onClick={nextCity}
+                              className='custom-shadow-center custom-button w-[25px] h-[25px] rounded-[30px] flex items-center justify-center text-sm cursor-pointer'
+                            >
+                            </button>
+                          </div>
+                          <div className='custom-shadow-center w-[150px] text-[#616161] px-4 py-2 rounded-[30px] text-xs text-center'>
+                            {weatherData.current.condition.text}
+                          </div>
+                        </>
+                      ) : (
+                        <div className='text-[#616161] text-xs'>Weather unavailable</div>
+                      )}
                     </div>
 
                   </div>
@@ -302,12 +316,6 @@ export default function Home() {
                     }}>
                     <p className='text-[#616161] text-xs mb-2'>QR code generator</p>
                     <p className='heading-one text-[65px] lg:text-[80px] leading-none mb-2'><span className='text-[25px] lg:text-[40px]'>Insta</span>QR</p>
-
-                    {/* TODO: Include this part in description */}
-                    {/* <div className='flex flex-row mb-4 gap-[10px]'>
-                      <div className='custom-shadow-center rounded-[30px] w-[60px] h-[25px] text-[#616161] text-sm'>NextJs</div>
-                      <div className='custom-shadow-center rounded-[30px] w-[60px] text-[#616161] text-sm'>ShadcnUI</div>
-                    </div> */}
 
                     <p className='text-[#A6A6A6] text-xs mb-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
