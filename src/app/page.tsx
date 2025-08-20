@@ -107,8 +107,9 @@ export default function Home() {
                     <div className='custom-shadow-center rounded-[30px] w-[50px] text-[#616161] text-sm'>Stripe</div>
                   </div>
 
-                  <p className='text-[#A6A6A6] text-xs mb-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                  incididunt ut labore et dolore magna aliqua.</p>
+                  <p className='text-[#A6A6A6] text-xs mb-4'>An end-to-end e-commerce solution featuring backend API development, 
+                    database management, user authentication systems, and frontend optimization for seamless shopping experience.
+                  </p>
 
                   <div className='flex flex-row gap-[10px]'>
                     <Link href="https://the-market-place.azurewebsites.net/shop" target="_blank">
@@ -154,7 +155,10 @@ export default function Home() {
                     backfaceVisibility: 'hidden',
                     WebkitBackfaceVisibility: 'hidden'
                   }}>
-                  <p className='text-[#616161] text-xs mb-2'>Tools I'm most familiar with</p>
+                  <div className='flex flex-row justify-between mb-2'>
+                    <p className='text-[#616161] text-xs'>Tools I'm most familiar with</p>
+                    <p className='text-[#A6A6A6] text-[10px]'>icons from Icons8</p>
+                  </div>
                   {/* Icons */}
                   <div className="flex flex-col mb-2 gap-[10px]">
                     <div className='flex flex-row mb-2 gap-[10px]'>
@@ -274,8 +278,8 @@ export default function Home() {
                       </div>
 
                       <div>
-                        <p className='text-[#A6A6A6] text-xs mb-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p className='text-[#A6A6A6] text-xs mb-4'>(hugh - eey) A unified waitlist platform that allows customers to join queues 
+                          at different restaurants through a centralized interface.</p>
                         <div className='flex flex-row gap-[10px]'>
                           <Link href="https://nextjs-hack.vercel.app/" target="_blank" className='hidden lg:flex'>
                           <div className="custom-shadow-center custom-button w-[75px] h-[30px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161]">View Site</div>
@@ -334,7 +338,7 @@ export default function Home() {
                     <p className='text-[#616161] text-xs mb-2'>AI RAG Chatbot</p>
                     <p className='heading-one text-[65px] lg:text-[80px] leading-none mb-2'><span className='text-[25px] lg:text-[40px]'>RAG</span>BOT</p>
 
-                    <p className='text-[#A6A6A6] text-xs mb-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p className='text-[#A6A6A6] text-xs mb-4'>A Q&A chatbot that processes .pdf and .txt files for context-aware responses.</p>
 
                     <Link href="https://github.com/annaw-99/RAG-chatbot" target="_blank">
                       <div className="custom-shadow-center custom-button w-[75px] h-[30px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161]">View Repo</div>
@@ -403,7 +407,7 @@ export default function Home() {
                     <p className='text-[#616161] text-xs mb-2'>QR code generator</p>
                     <p className='heading-one text-[65px] lg:text-[80px] leading-none mb-2'><span className='text-[25px] lg:text-[40px]'>Insta</span>QR</p>
 
-                    <p className='text-[#A6A6A6] text-xs mb-4'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p className='text-[#A6A6A6] text-xs mb-4'>A web tool that allows users to quickly create customized QR codes.</p>
 
                     <div className='flex flex-row gap-[10px]'>
                       <Link href="https://insta-qr-ten.vercel.app/" target="_blank" className='hidden lg:flex'>
