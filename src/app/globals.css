@@ -5,6 +5,81 @@
   --foreground: #171717;
 }
 
+body,
+[class*="bg-"],
+[class*="text-"],
+.custom-shadow-center,
+.custom-shadow-left,
+.custom-button,
+.pressed-shadow,
+.line-shadow {
+  transition: 
+    background-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
+}
+
+/* .dark {
+  transition: background-color 0.3s ease, color 0.3s ease;
+} */
+
+.dark [style*="background-color"] {
+  background-color: #2d2d2d !important;
+}
+
+.dark [class*="bg-"]:not([class*="bg-[#CA0000]"]) {
+  background-color: #2d2d2d !important;
+}
+
+.dark [class*="text-"] {
+  color: #e0e0e0 !important;
+}
+
+.dark {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+}
+
+.dark .custom-shadow-center {
+  box-shadow: 
+    -5px -5px 10px rgba(95, 95, 95, 0.3),
+    5px 5px 10px rgba(0, 0, 0, 0.4) !important;
+}
+
+.dark .custom-shadow-left {
+  box-shadow: 
+    -5px -5px 10px rgba(95, 95, 95, 0.3),
+    5px 5px 10px rgba(0, 0, 0, 0.4) !important;
+}
+
+.dark .pressed-shadow {
+  box-shadow: 
+    inset -5px -5px 10px rgba(95, 95, 95, 0.3),
+    inset 5px 5px 10px rgba(0, 0, 0, 0.4) !important;
+}
+
+.dark .custom-button:hover {
+  box-shadow: 
+    inset -5px -5px 10px rgba(95, 95, 95, 0.3),
+    inset 5px 5px 10px rgba(0, 0, 0, 0.4) !important;
+}
+
+.dark .line-shadow {
+  box-shadow: 
+    inset -2px -2px 4px rgba(95, 95, 95, 0.3),
+    inset 2px 2px 4px rgba(0, 0, 0, 0.4) !important;
+}
+
+.dark .heading-one {
+  filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.6)) !important;
+}
+
+/* Make icons white */
+.dark img[src*="/icons/"] {
+  filter: brightness(0) invert(1);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

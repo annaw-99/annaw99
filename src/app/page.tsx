@@ -1,16 +1,18 @@
 "use client"
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react'; // Add useEffect
 import TicTacToe from './components/game';
+import { useTheme } from 'next-themes'; 
 import { useWeather } from './hooks/weather';
 
 const cities: string[] = ['Taipei', 'Seattle', 'New York', 'Ithaca', 'San Francisco', 'Tokyo'];
 
 export default function Home() {
-  const [activeTheme, setActiveTheme] = useState('light');
+  const { theme, setTheme } = useTheme(); 
   const [showProjects, setShowProjects] = useState(false);
   const [ticTacToeStarted, setTicTacToeStarted] = useState(false);
+  const [mounted, setMounted] = useState(false); // Add this
 
   const { 
     weatherData, 
@@ -19,8 +21,17 @@ export default function Home() {
     previousCity 
   } = useWeather(cities);
 
+  // Add this useEffect
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
   return (
-    <div className="flex flex-col items-center flex-1 justify-center min-h-screen pt-10 lg:px-20 lg:pt-12"
+    <div className="flex flex-col items-center flex-1 justify-center min-h-screen pt-10 lg:px-20 lg:pt-12 bg-[#E8E8E8]"
     style={{ fontFamily: 'var(--font-bebas-neue)' }}>
       <main className="flex flex-col gap-[24px] row-start-2 items-center">
         
@@ -37,7 +48,7 @@ export default function Home() {
           </div>
 
           {/* Theme Colors */}
-          <div 
+          {/* <div 
             className={`custom-shadow-center custom-button w-[65px] lg:w-[90px] h-[45px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161] cursor-pointer ${
               activeTheme === 'light' ? 'pressed-shadow' : ''
             }`}
@@ -50,7 +61,36 @@ export default function Home() {
             }`}
             onClick={() => setActiveTheme('dark')}>
             DARK
+          </div> */}
+          {/* <div 
+            className={`custom-shadow-center custom-button w-[65px] lg:w-[90px] h-[45px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161] cursor-pointer ${
+              theme === 'light' ? 'pressed-shadow' : ''
+            }`}
+            onClick={() => setTheme('light')}>
+            LIGHT
           </div>
+          <div 
+            className={`custom-shadow-center custom-button w-[65px] lg:w-[90px] h-[45px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161] cursor-pointer ${
+              theme === 'dark' ? 'pressed-shadow' : ''
+            }`}
+            onClick={() => setTheme('dark')}>
+            DARK
+          </div> */}
+{/* Theme Colors */}
+<button 
+  className={`custom-shadow-center custom-button w-[65px] lg:w-[90px] h-[45px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161] cursor-pointer ${
+    theme === 'light' ? 'pressed-shadow' : ''
+  }`}
+  onClick={() => setTheme('light')}>
+  LIGHT
+</button>
+<button 
+  className={`custom-shadow-center custom-button w-[65px] lg:w-[90px] h-[45px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161] cursor-pointer ${
+    theme === 'dark' ? 'pressed-shadow' : ''
+  }`}
+  onClick={() => setTheme('dark')}>
+  DARK
+</button>
         </div>
 
         {/* Main Content */}
@@ -112,10 +152,10 @@ export default function Home() {
                   </p>
 
                   <div className='flex flex-row gap-[10px]'>
-                    <Link href="https://the-market-place.azurewebsites.net/shop" target="_blank">
+                    <Link href="https://the-market-place.azurewebsites.net/shop" target="_blank" rel="noopener noreferrer">
                       <div className="custom-shadow-center custom-button w-[75px] h-[30px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161]">View Site</div>
                     </Link> 
-                    <Link href="https://github.com/annaw-99/e-commerce" target="_blank">
+                    <Link href="https://github.com/annaw-99/e-commerce" target="_blank" rel="noopener noreferrer">
                       <div className="custom-shadow-center custom-button w-[75px] h-[30px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161]">View Repo</div>
                     </Link> 
                   </div>
@@ -126,10 +166,10 @@ export default function Home() {
             
             {/* Links */}
             <div className="flex gap-[24px]">
-              <Link href="https://github.com/annaw-99" target="_blank" >
+              <Link href="https://github.com/annaw-99" target="_blank"rel="noopener noreferrer">
                 <div className="custom-shadow-center custom-button w-[65px] lg:w-[70px] 2xl:w-[100px] h-[40px] bg-[#E8E8E8] rounded-[30px] text-[12px] text-[#616161]">Github</div>
               </Link>
-              <Link href="https://www.linkedin.com/in/tungyen-wang" target="_blank">
+              <Link href="https://www.linkedin.com/in/tungyen-wang" target="_blank" rel="noopener noreferrer">
                 <div className="custom-shadow-center custom-button w-[65px] lg:w-[70px] 2xl:w-[100px] h-[40px] bg-[#E8E8E8] rounded-[30px] text-[12px] text-[#616161]">LinkedIn</div>
               </Link>
               <Link href="mailto:annawang9909@gmail.com">
@@ -157,7 +197,8 @@ export default function Home() {
                   }}>
                   <div className='flex flex-row justify-between mb-2'>
                     <p className='text-[#616161] text-xs'>Tools I'm most familiar with</p>
-                    <p className='text-[#A6A6A6] text-[10px]'>icons from Icons8</p>
+                    <p className='text-[#A6A6A6] text-[10px]'>icons from 
+                    <Link href="https://icons8.com/" target="_blank" rel="noopener noreferrer" className='hover:text-black'> Icons8</Link></p>
                   </div>
                   {/* Icons */}
                   <div className="flex flex-col mb-2 gap-[10px]">
@@ -281,10 +322,10 @@ export default function Home() {
                         <p className='text-[#A6A6A6] text-xs mb-4'>(hugh - eey) A unified waitlist platform that allows customers to join queues 
                           at different restaurants through a centralized interface.</p>
                         <div className='flex flex-row gap-[10px]'>
-                          <Link href="https://nextjs-hack.vercel.app/" target="_blank" className='hidden lg:flex'>
+                          <Link href="https://nextjs-hack.vercel.app/" target="_blank" rel="noopener noreferrer" className='hidden lg:flex'>
                           <div className="custom-shadow-center custom-button w-[75px] h-[30px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161]">View Site</div>
                           </Link> 
-                          <Link href="https://github.com/annaw-99/nextjs-hackathon" target="_blank">
+                          <Link href="https://github.com/annaw-99/nextjs-hackathon" rel="noopener noreferrer" target="_blank">
                             <div className="custom-shadow-center custom-button w-[75px] h-[30px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161]">View Repo</div>
                           </Link> 
                         </div>
@@ -340,7 +381,7 @@ export default function Home() {
 
                     <p className='text-[#A6A6A6] text-xs mb-4'>A Q&A chatbot that processes .pdf and .txt files for context-aware responses.</p>
 
-                    <Link href="https://github.com/annaw-99/RAG-chatbot" target="_blank">
+                    <Link href="https://github.com/annaw-99/RAG-chatbot" target="_blank" rel="noopener noreferrer">
                       <div className="custom-shadow-center custom-button w-[75px] h-[30px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161]">View Repo</div>
                     </Link> 
 
@@ -410,10 +451,10 @@ export default function Home() {
                     <p className='text-[#A6A6A6] text-xs mb-4'>A web tool that allows users to quickly create customized QR codes.</p>
 
                     <div className='flex flex-row gap-[10px]'>
-                      <Link href="https://insta-qr-ten.vercel.app/" target="_blank" className='hidden lg:flex'>
+                      <Link href="https://insta-qr-ten.vercel.app/" target="_blank" rel="noopener noreferrer" className='hidden lg:flex'>
                       <div className="custom-shadow-center custom-button w-[75px] h-[30px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161]">View Site</div>
                       </Link> 
-                      <Link href="https://github.com/annaw-99/qr-code" target="_blank">
+                      <Link href="https://github.com/annaw-99/qr-code" target="_blank" rel="noopener noreferrer">
                         <div className="custom-shadow-center custom-button w-[75px] h-[30px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161]">View Repo</div>
                       </Link> 
                     </div>
