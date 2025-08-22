@@ -88,7 +88,7 @@ export default function Home() {
                   <p className='text-[#A6A6A6] text-xs'>Based in <span className='text-[#616161]'>New York City</span>.</p>
 
                   <p className='text-[#A6A6A6] text-xs'>Graduated from <span className='text-[#616161]'>Cornell</span> with a
-                  <span className='text-[#616161]'> Master's </span>in <span className='text-[#616161]'>Information Science</span>.</p>
+                  <span className='text-[#616161]'> Master&apos;s </span>in <span className='text-[#616161]'>Information Science</span>.</p>
 
                   <p className='text-[#A6A6A6] text-xs'>Specialize in <span className='text-[#616161]'>Full-Stack Development</span> and 
                   <span className='text-[#616161]'> Data Analysis</span>.</p>
