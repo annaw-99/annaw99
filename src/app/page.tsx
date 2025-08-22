@@ -1,7 +1,7 @@
 "use client"
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react'; // Add useEffect
+import { useState, useEffect } from 'react';
 import TicTacToe from './components/game';
 import { useTheme } from 'next-themes'; 
 import { useWeather } from './hooks/weather';
@@ -12,7 +12,7 @@ export default function Home() {
   const { theme, setTheme } = useTheme(); 
   const [showProjects, setShowProjects] = useState(false);
   const [ticTacToeStarted, setTicTacToeStarted] = useState(false);
-  const [mounted, setMounted] = useState(false); // Add this
+  const [mounted, setMounted] = useState(false);
 
   const { 
     weatherData, 
@@ -21,7 +21,6 @@ export default function Home() {
     previousCity 
   } = useWeather(cities);
 
-  // Add this useEffect
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -48,49 +47,20 @@ export default function Home() {
           </div>
 
           {/* Theme Colors */}
-          {/* <div 
-            className={`custom-shadow-center custom-button w-[65px] lg:w-[90px] h-[45px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161] cursor-pointer ${
-              activeTheme === 'light' ? 'pressed-shadow' : ''
-            }`}
-            onClick={() => setActiveTheme('light')}>
-            LIGHT
-          </div>
-          <div 
-            className={`custom-shadow-center custom-button w-[65px] lg:w-[90px] h-[45px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161] cursor-pointer ${
-              activeTheme === 'dark' ? 'pressed-shadow' : ''
-            }`}
-            onClick={() => setActiveTheme('dark')}>
-            DARK
-          </div> */}
-          {/* <div 
-            className={`custom-shadow-center custom-button w-[65px] lg:w-[90px] h-[45px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161] cursor-pointer ${
-              theme === 'light' ? 'pressed-shadow' : ''
-            }`}
-            onClick={() => setTheme('light')}>
-            LIGHT
-          </div>
-          <div 
-            className={`custom-shadow-center custom-button w-[65px] lg:w-[90px] h-[45px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161] cursor-pointer ${
-              theme === 'dark' ? 'pressed-shadow' : ''
-            }`}
-            onClick={() => setTheme('dark')}>
-            DARK
-          </div> */}
-{/* Theme Colors */}
-<button 
-  className={`custom-shadow-center custom-button w-[65px] lg:w-[90px] h-[45px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161] cursor-pointer ${
-    theme === 'light' ? 'pressed-shadow' : ''
-  }`}
-  onClick={() => setTheme('light')}>
-  LIGHT
-</button>
-<button 
-  className={`custom-shadow-center custom-button w-[65px] lg:w-[90px] h-[45px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161] cursor-pointer ${
-    theme === 'dark' ? 'pressed-shadow' : ''
-  }`}
-  onClick={() => setTheme('dark')}>
-  DARK
-</button>
+          <button 
+          className={`custom-shadow-center custom-button w-[65px] lg:w-[90px] h-[45px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161] cursor-pointer ${
+            theme === 'light' ? 'pressed-shadow' : ''
+          }`}
+          onClick={() => setTheme('light')}>
+          LIGHT
+          </button>
+          <button 
+          className={`custom-shadow-center custom-button w-[65px] lg:w-[90px] h-[45px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161] cursor-pointer ${
+            theme === 'dark' ? 'pressed-shadow' : ''
+          }`}
+          onClick={() => setTheme('dark')}>
+          DARK
+          </button>
         </div>
 
         {/* Main Content */}

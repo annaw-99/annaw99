@@ -32,7 +32,7 @@ body,
   background-color: #2d2d2d !important;
 }
 
-.dark [class*="text-"] {
+.dark [class*="text-"]:not([class*="text-[#CA0000]"]) {
   color: #e0e0e0 !important;
 }
 
