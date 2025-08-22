@@ -166,7 +166,7 @@ export default function Home() {
                     WebkitBackfaceVisibility: 'hidden'
                   }}>
                   <div className='flex flex-row justify-between mb-2'>
-                    <p className='text-[#616161] text-xs'>Tools I'm most familiar with</p>
+                    <p className='text-[#616161] text-xs'>Tools I&apos;m most familiar with</p>
                     <p className='text-[#A6A6A6] text-[10px]'>icons from 
                     <Link href="https://icons8.com/" target="_blank" rel="noopener noreferrer" className='hover:text-black'> Icons8</Link></p>
                   </div>
@@ -373,7 +373,7 @@ export default function Home() {
                       backfaceVisibility: 'hidden',
                       WebkitBackfaceVisibility: 'hidden'
                     }}>
-                    <p className='text-[#616161] text-xs mb-4'>Weather <span className='text-[#A6A6A6]'>in places I've been to</span></p>
+                    <p className='text-[#616161] text-xs mb-4'>Weather <span className='text-[#A6A6A6]'>in places I&apos;ve been to</span></p>
                     
                     <div className='flex flex-col items-center justify-center'>
                       {weatherLoading ? (
