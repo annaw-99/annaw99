@@ -83,7 +83,7 @@ export default function Home() {
                     backfaceVisibility: 'hidden',
                     WebkitBackfaceVisibility: 'hidden'
                   }}>
-                  <p className='text-[#A6A6A6] text-xs mb-2'>Hi! My name is <span className='text-[#616161]'>Anna (Tung-Yen)</span> and I'm a</p>
+                  <p className='text-[#A6A6A6] text-xs mb-2'>Hi! My name is <span className='text-[#616161]'>Anna (Tung-Yen)</span> and I&apos;m a</p>
                   <p className='heading-one text-[80px] leading-none mb-6'>Software Developer.</p>
                   <p className='text-[#A6A6A6] text-xs'>Based in <span className='text-[#616161]'>New York City</span>.</p>
 
@@ -96,7 +96,7 @@ export default function Home() {
                   <p className='text-[#A6A6A6] text-xs mb-6'>Currently learning more about <span className='text-[#616161]'>NLP</span> and 
                   <span className='text-[#616161]'> Machine Learning</span>.</p>
 
-                  <p className='text-[#616161] text-xs'>Let's Connect!</p>
+                  <p className='text-[#616161] text-xs'>Let&apos;s Connect!</p>
                 </div>
                 {/* Back - Project One */}
                 <div 

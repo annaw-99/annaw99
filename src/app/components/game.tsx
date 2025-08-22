@@ -34,7 +34,7 @@ export default function TicTacToe() {
     const availableMoves = grid.map((square, index) => square === null ? index : null).filter(val => val !== null);
     const moveCount = 9 - availableMoves.length;
     
-    for (let move of availableMoves) {
+    for (const move of availableMoves) {
       const testBoard = [...grid];
       testBoard[move!] = 'O';
       if (calculateWinner(testBoard) === 'O') {
@@ -42,7 +42,7 @@ export default function TicTacToe() {
       }
     }
     
-    for (let move of availableMoves) {
+    for (const move of availableMoves) {
       const testBoard = [...grid];
       testBoard[move!] = 'X';
       if (calculateWinner(testBoard) === 'X') {
@@ -111,7 +111,7 @@ export default function TicTacToe() {
     if (winner) {
       return winner === 'X' ? 'You Win! 🎉' : 'Bot Wins! 🤖';
     }
-    if (isDraw) return "It's a draw! 🤝";
+    if (isDraw) return "It&apos;s a draw! 🤝";
     return isPlayerTurn ? 'Your turn' : 'Bot thinking...';
   };
 
