@@ -83,17 +83,17 @@ export default function Home() {
                     backfaceVisibility: 'hidden',
                     WebkitBackfaceVisibility: 'hidden'
                   }}>
-                  <p className='text-[#A6A6A6] text-xs mb-2'>Hi! My name is <span className='text-[#616161]'>Anna (Tung-Yen)</span> and I&apos;m a</p>
+                  <p className='text-[#595959] text-xs mb-2'>Hi! My name is <span className='text-[#616161]'>Anna (Tung-Yen)</span> and I&apos;m a</p>
                   <p className='heading-one text-[80px] leading-none mb-6'>Software Developer.</p>
-                  <p className='text-[#A6A6A6] text-xs'>Based in <span className='text-[#616161]'>New York City</span>.</p>
+                  <p className='text-[#595959] text-xs'>Based in <span className='text-[#616161]'>New York City</span>.</p>
 
-                  <p className='text-[#A6A6A6] text-xs'>Graduated from <span className='text-[#616161]'>Cornell</span> with a
+                  <p className='text-[#595959] text-xs'>Graduated from <span className='text-[#616161]'>Cornell</span> with a
                   <span className='text-[#616161]'> Master&apos;s </span>in <span className='text-[#616161]'>Information Science</span>.</p>
 
-                  <p className='text-[#A6A6A6] text-xs'>Specialize in <span className='text-[#616161]'>Full-Stack Development</span> and 
+                  <p className='text-[#595959] text-xs'>Specialize in <span className='text-[#616161]'>Full-Stack Development</span> and 
                   <span className='text-[#616161]'> Data Analysis</span>.</p>
                   
-                  <p className='text-[#A6A6A6] text-xs mb-6'>Currently learning more about <span className='text-[#616161]'>NLP</span> and 
+                  <p className='text-[#595959] text-xs mb-6'>Currently learning more about <span className='text-[#616161]'>NLP</span> and 
                   <span className='text-[#616161]'> Machine Learning</span>.</p>
 
                   <p className='text-[#616161] text-xs'>Let&apos;s Connect!</p>
@@ -106,8 +106,8 @@ export default function Home() {
                     WebkitBackfaceVisibility: 'hidden',
                     transform: 'rotateY(180deg)'
                   }}>
-                  <p className='text-[#616161] text-xs mb-2'>Full-Stack E-Commerce Site</p>
-                  <p className='heading-one text-[80px] leading-none mb-2'>The Skin Store</p>
+                  <p className='text-[#616161] text-xs 2xl:text-base mb-2'>Full-Stack E-Commerce Site</p>
+                  <p className='heading-one text-[80px] 2xl:text-[120px] leading-none mb-2'>The Skin Store</p>
 
                   <div className='flex flex-row mb-4 gap-[10px]'>
                     <div className='custom-shadow-center rounded-[30px] w-[35px] h-[25px] text-[#616161] text-sm'>C#</div>
@@ -117,7 +117,7 @@ export default function Home() {
                     <div className='custom-shadow-center rounded-[30px] w-[50px] text-[#616161] text-sm'>Stripe</div>
                   </div>
 
-                  <p className='text-[#A6A6A6] text-xs mb-4'>An end-to-end e-commerce solution featuring backend API development, 
+                  <p className='text-[#595959] text-xs 2xl:text-sm mb-4'>An end-to-end e-commerce solution featuring API development, 
                     database management, user authentication systems, and frontend optimization for seamless shopping experience.
                   </p>
 
@@ -134,8 +134,8 @@ export default function Home() {
               </div>
             </div>
             
-            {/* Links */}
-            <div className="flex gap-[24px]">
+            {/* Links: Desktop */}
+            <div className="hidden lg:flex gap-[24px]">
               <Link href="https://github.com/annaw-99" target="_blank"rel="noopener noreferrer">
                 <div className="custom-shadow-center custom-button w-[65px] lg:w-[70px] 2xl:w-[100px] h-[40px] bg-[#E8E8E8] rounded-[30px] text-[12px] text-[#616161]">Github</div>
               </Link>
@@ -167,7 +167,7 @@ export default function Home() {
                   }}>
                   <div className='flex flex-row justify-between mb-2'>
                     <p className='text-[#616161] text-xs'>Tools I&apos;m most familiar with</p>
-                    <p className='text-[#A6A6A6] text-[10px]'>icons from 
+                    <p className='text-[#595959] text-[10px]'>icons from 
                     <Link href="https://icons8.com/" target="_blank" rel="noopener noreferrer" className='hover:text-black'> Icons8</Link></p>
                   </div>
                   {/* Icons */}
@@ -281,15 +281,15 @@ export default function Home() {
                     WebkitBackfaceVisibility: 'hidden',
                     transform: 'rotateY(180deg)'
                   }}>
-                    <p className='text-[#616161] text-xs mb-6'>Full-Stack Retaurant Waitlist System</p>
+                    <p className='text-[#616161] text-xs 2xl:text-base mb-6'>Full-Stack Retaurant Waitlist System</p>
 
                     <div className='flex flex-row gap-[20px]'>
                       <div>
-                        <p className='heading-one text-[65px] lg:text-[80px] leading-none mb-2'>HUEY</p>
+                        <p className='heading-one text-[65px] lg:text-[80px] 2xl:text-[110px] leading-none mb-2'>HUEY</p>
                       </div>
 
                       <div>
-                        <p className='text-[#A6A6A6] text-xs mb-4'>(hugh - eey) A unified waitlist platform that allows customers to join queues 
+                        <p className='text-[#595959] text-xs 2xl:text-sm mb-4'>(hugh - eey) A unified waitlist platform that allows customers to join queues 
                           at different restaurants through a centralized interface.</p>
                         <div className='flex flex-row gap-[10px]'>
                           <Link href="https://nextjs-hack.vercel.app/" target="_blank" rel="noopener noreferrer" className='hidden lg:flex'>
@@ -340,16 +340,17 @@ export default function Home() {
                   </div>
                   {/* Back - Project Three */}
                   <div 
-                    className="absolute inset-0 custom-shadow-left bg-[#E8E8E8] rounded-[30px] text-[16px] flex flex-col"
+                    className="absolute inset-0 custom-shadow-left bg-[#E8E8E8] rounded-[30px] text-[16px] flex flex-col 2xl:justify-center"
                     style={{ 
                       backfaceVisibility: 'hidden',
                       WebkitBackfaceVisibility: 'hidden',
                       transform: 'rotateY(180deg)'
                     }}>
-                    <p className='text-[#616161] text-xs mb-2'>AI RAG Chatbot</p>
-                    <p className='heading-one text-[65px] lg:text-[80px] leading-none mb-2'><span className='text-[25px] lg:text-[40px]'>RAG</span>BOT</p>
+                    <p className='text-[#616161] text-xs 2xl:text-base mb-2'>AI RAG Chatbot</p>
+                    <p className='heading-one text-[65px] lg:text-[80px] 2xl:text-[110px] leading-none mb-2'><span className='text-[25px] lg:text-[40px] 2xl:text-[50px]'>RAG</span>BOT</p>
 
-                    <p className='text-[#A6A6A6] text-xs mb-4'>A Q&A chatbot that processes .pdf and .txt files for context-aware responses.</p>
+                    <p className='text-[#595959] text-xs 2xl:text-sm mb-4 hidden lg:flex'>A Q&A chatbot that processes .pdf and .txt files for context-aware responses.</p>
+                    <p className='text-[#595959] text-xs mb-4 flex lg:hidden'>A Q&A chatbot that processes files for context-aware responses.</p>
 
                     <Link href="https://github.com/annaw-99/RAG-chatbot" target="_blank" rel="noopener noreferrer">
                       <div className="custom-shadow-center custom-button w-[75px] h-[30px] bg-[#E8E8E8] rounded-[30px] text-[14px] text-[#616161]">View Repo</div>
@@ -373,18 +374,18 @@ export default function Home() {
                       backfaceVisibility: 'hidden',
                       WebkitBackfaceVisibility: 'hidden'
                     }}>
-                    <p className='text-[#616161] text-xs mb-4'>Weather <span className='text-[#A6A6A6]'>in places I&apos;ve been to</span></p>
+                    <p className='text-[#616161] text-xs mb-4'>Weather <span className='text-[#595959] text-[8px] lg:text-xs'>in places I&apos;ve been to</span></p>
                     
                     <div className='flex flex-col items-center justify-center'>
                       {weatherLoading ? (
-                        <div className='text-[#A6A6A6] text-xs'>Loading...</div>
+                        <div className='text-[#595959] text-xs'>Loading...</div>
                       ) : weatherData ? (
                         <>
                           <p className='text-[#616161] text-md mb-2'>{weatherData.location.name}</p>
-                          <div className='flex flex-row items-center justify-center gap-[15px] mb-4'>
+                          <div className='flex flex-row items-center justify-center gap-[8px] lg:gap-[15px] mb-2 lg:mb-4'>
                             <button 
                               onClick={previousCity}
-                              className='custom-shadow-center custom-button  w-[25px] h-[25px] rounded-[30px] flex items-center justify-center text-sm cursor-pointer'
+                              className='custom-shadow-center custom-button w-[25px] h-[25px] rounded-[30px] flex items-center justify-center text-sm cursor-pointer'
                             >
                             </button>
                             <div className='relative'>
@@ -397,7 +398,7 @@ export default function Home() {
                             >
                             </button>
                           </div>
-                          <div className='custom-shadow-center w-[150px] text-[#616161] px-4 py-2 rounded-[30px] text-xs text-center'>
+                          <div className='custom-shadow-center w-[100px] lg:w-[150px] text-[#616161] px-4 py-2 rounded-[30px] text-xs text-center'>
                             {weatherData.current.condition.text}
                           </div>
                         </>
@@ -409,16 +410,16 @@ export default function Home() {
                   </div>
                   {/* Back - Project Four */}
                   <div 
-                    className="absolute inset-0 custom-shadow-left bg-[#E8E8E8] rounded-[30px] text-[16px] flex flex-col"
+                    className="absolute inset-0 custom-shadow-left bg-[#E8E8E8] rounded-[30px] text-[16px] flex flex-col 2xl:justify-center"
                     style={{ 
                       backfaceVisibility: 'hidden',
                       WebkitBackfaceVisibility: 'hidden',
                       transform: 'rotateY(180deg)'
                     }}>
-                    <p className='text-[#616161] text-xs mb-2'>QR code generator</p>
-                    <p className='heading-one text-[65px] lg:text-[80px] leading-none mb-2'><span className='text-[25px] lg:text-[40px]'>Insta</span>QR</p>
+                    <p className='text-[#616161] text-xs 2xl:text-base mb-2'>QR code generator</p>
+                    <p className='heading-one text-[65px] lg:text-[80px] 2xl:text-[110px] leading-none mb-2'><span className='text-[25px] lg:text-[40px] 2xl:text-[50px]'>Insta</span>QR</p>
 
-                    <p className='text-[#A6A6A6] text-xs mb-4'>A web tool that allows users to quickly create customized QR codes.</p>
+                    <p className='text-[#595959] text-xs mb-4 2xl:text-sm'>A web tool that allows users to quickly create customized QR codes.</p>
 
                     <div className='flex flex-row gap-[10px]'>
                       <Link href="https://insta-qr-ten.vercel.app/" target="_blank" rel="noopener noreferrer" className='hidden lg:flex'>
@@ -433,11 +434,23 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            {/* Links: Mobile */}
+            <div className="flex lg:hidden gap-[24px]">
+              <Link href="https://github.com/annaw-99" target="_blank"rel="noopener noreferrer">
+                <div className="custom-shadow-center custom-button w-[65px] lg:w-[70px] 2xl:w-[100px] h-[40px] bg-[#E8E8E8] rounded-[30px] text-[12px] text-[#616161]">Github</div>
+              </Link>
+              <Link href="https://www.linkedin.com/in/tungyen-wang" target="_blank" rel="noopener noreferrer">
+                <div className="custom-shadow-center custom-button w-[65px] lg:w-[70px] 2xl:w-[100px] h-[40px] bg-[#E8E8E8] rounded-[30px] text-[12px] text-[#616161]">LinkedIn</div>
+              </Link>
+              <Link href="mailto:annawang9909@gmail.com">
+                <div className="custom-shadow-center custom-button w-[140px] lg:w-[180px] 2xl:w-[235px] h-[40px] bg-[#E8E8E8] rounded-[30px] text-[12px] text-[#616161]">annawang9909@gmail.com</div>
+              </Link>            
+            </div>
           </div>
         </div>
       </main>
       
-      <footer className="flex flex-wrap mt-12 mb-4 items-center justify-center text-[#A6A6A6] text-[12px]">
+      <footer className="flex flex-wrap mt-12 mb-4 items-center justify-center text-[#595959] text-[12px]">
         © 2025 ALL RIGHTS RESERVED.
       </footer>
     </div>
